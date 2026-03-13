@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pavan Am — Designer. Builder. Creator.</title>
+  <meta name="description" content="Pavan Am — Graphic Designer, UI/UX Designer, Website Builder & 3D Animation Creator. Premium portfolio of digital experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ─── LOADER ─────────────────────────────────────────────── -->
+<div id="loader">
+  <div class="loader-ring"></div>
+  <span class="loader-text">PAVAN AM</span>
+</div>
+
+<!-- ─── CURSOR ────────────────────────────────────────────── -->
+<div id="cursor"></div>
+<div id="cursor-trail"></div>
+
+<!-- ─── NAV ───────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-logo">PA</div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#contact" class="btn-glass">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- ─── PARTICLES CANVAS ───────────────────────────────────── -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ─── HERO SCROLL CONTAINER (tall pinned section) ──────── -->
+<div id="hero-scroll-container">
+
+  <!-- Sticky canvas wrapper — stays visible while user scrolls through container -->
+  <div id="hero-sticky">
+
+    <!-- Frame sequence canvas -->
+    <canvas id="seq-canvas"></canvas>
+    
+    <!-- Dark overlay to ensure text is legible against bright frames -->
+    <div class="seq-overlay"></div>
+
+    <!-- Loading overlay -->
+    <div id="seq-loader">
+      <div class="seq-loader-bar-wrap"><div class="seq-loader-bar" id="seq-loader-bar"></div></div>
+      <span class="seq-loader-pct" id="seq-loader-pct">0%</span>
+    </div>
+
+    <!-- Hero Text Overlay -->
+    <div class="hero-content" id="hero-content">
+      <div class="hero-tag">CREATIVE PORTFOLIO</div>
+      <h1 class="hero-name">
+        <span class="name-line">Pavan</span>
+        <span class="name-line">Am</span>
+      </h1>
+      <p class="hero-subtitle">Designing, Building, and Launching<br/>Digital Experiences</p>
+      <div class="hero-roles">
+        <span class="role-tag" style="--i:0">Graphic Designer</span>
+        <span class="role-sep">•</span>
+        <span class="role-tag" style="--i:1">UI/UX Designer</span>
+        <span class="role-sep">•</span>
+        <span class="role-tag" style="--i:2">Website Builder</span>
+        <span class="role-sep">•</span>
+        <span class="role-tag" style="--i:3">3D Creator</span>
+      </div>
+      
+      <a href="#projects" class="hero-cta-btn" id="hero-cta">View Project Library</a>
+      <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </div>
+
+    <!-- Floating orbs -->
+    <div class="float-orb orb-1"></div>
+    <div class="float-orb orb-2"></div>
+    <div class="float-orb orb-3"></div>
+  </div>
+
+</div>
+
+<!-- ─── ABOUT SECTION ─────────────────────────────────────── -->
+<section id="about">
+  <div class="section-noise"></div>
+
+  <div class="about-ambient-left"></div>
+  <div class="about-ambient-right"></div>
+
+  <div class="about-wrapper">
+    <div class="about-label reveal-label">ABOUT</div>
+
+    <div class="glass-panel" id="about-panel">
+      <div class="glass-shine"></div>
+      <div class="glass-content">
+        <div class="about-eyebrow">The Mind Behind the Work</div>
+        <p class="about-body">
+          A creative designer focused on visual systems,<br/>
+          interfaces, digital experiences,<br/>
+          and modern website execution.
+        </p>
+        <p class="about-body-2">
+          I don't just design — I build, deploy, and breathe life into digital ideas. Every pixel is intentional. Every interaction, crafted.
+        </p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-num" data-target="50">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years Exp</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+            <span class="stat-label">Dedication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating design elements -->
+    <div class="float-elem fe-1">✦</div>
+    <div class="float-elem fe-2">◈</div>
+    <div class="float-elem fe-3">⬡</div>
+    <div class="float-elem fe-4">✦</div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS SECTION ──────────────────────────────────── -->
+<section id="projects">
+  <div class="section-noise"></div>
+  <div class="projects-header">
+    <div class="reveal-label">SELECTED WORK</div>
+    <h2 class="section-title">Projects</h2>
+  </div>
+
+  <div class="projects-grid" id="projects-grid">
+
+    <div class="project-card" data-index="0" id="card-0">
+      <div class="card-bg" style="background-image: url('assets/images/project1.png')"></div>
+      <div class="card-overlay"></div>
+      <div class="card-tilt-inner">
+        <div class="card-tags">
+          <span class="card-tag">Designed</span>
+          <span class="card-tag">Built</span>
+          <span class="card-tag">Deployed</span>
+        </div>
+        <div class="card-info">
+          <span class="card-num">01</span>
+          <h3 class="card-title">Dashboard UI System</h3>
+          <p class="card-desc">Premium dark dashboard with real-time analytics and glass morphism panels.</p>
+          <div class="card-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-index="1" id="card-1">
+      <div class="card-bg" style="background-image: url('assets/images/project2.png')"></div>
+      <div class="card-overlay"></div>
+      <div class="card-tilt-inner">
+        <div class="card-tags">
+          <span class="card-tag">Designed</span>
+          <span class="card-tag">Built</span>
+          <span class="card-tag">Deployed</span>
+        </div>
+        <div class="card-info">
+          <span class="card-num">02</span>
+          <h3 class="card-title">Creative Agency Landing</h3>
+          <p class="card-desc">Bold cinematic landing page with gradient animation and scroll storytelling.</p>
+          <div class="card-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-index="2" id="card-2">
+      <div class="card-bg" style="background-image: url('assets/images/project3.png')"></div>
+      <div class="card-overlay"></div>
+      <div class="card-tilt-inner">
+        <div class="card-tags">
+          <span class="card-tag">Designed</span>
+          <span class="card-tag">Built</span>
+          <span class="card-tag">Deployed</span>
+        </div>
+        <div class="card-info">
+          <span class="card-num">03</span>
+          <h3 class="card-title">Premium E-commerce</h3>
+          <p class="card-desc">Minimal product showcase with refined typography and immersive transitions.</p>
+          <div class="card-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-index="3" id="card-3">
+      <div class="card-bg" style="background-image: url('assets/images/project4.png')"></div>
+      <div class="card-overlay"></div>
+      <div class="card-tilt-inner">
+        <div class="card-tags">
+          <span class="card-tag">Designed</span>
+          <span class="card-tag">Built</span>
+          <span class="card-tag">Deployed</span>
+        </div>
+        <div class="card-info">
+          <span class="card-num">04</span>
+          <h3 class="card-title">SaaS Analytics App</h3>
+          <p class="card-desc">Futuristic data visualization platform with neon accent system and dark UI.</p>
+          <div class="card-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card card-wide" data-index="4" id="card-4">
+      <div class="card-bg" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"></div>
+      <div class="card-overlay"></div>
+      <div class="card-tilt-inner">
+        <div class="card-tags">
+          <span class="card-tag">Designed</span>
+          <span class="card-tag">Built</span>
+          <span class="card-tag">Deployed</span>
+        </div>
+        <div class="card-info">
+          <span class="card-num">05</span>
+          <h3 class="card-title">3D Interactive Experience</h3>
+          <p class="card-desc">Full WebGL 3D brand experience with particle systems and scroll-driven animation sequences.</p>
+          <div class="card-arrow">→</div>
+        </div>
+        <!-- 3D Floating elements inside this card -->
+        <div class="card-3d-elem"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Project Lightbox -->
+  <div id="project-lightbox" class="lightbox">
+    <button id="lightbox-close" class="lightbox-close">✕</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="Project Preview" />
+      </div>
+      <div class="lightbox-info">
+        <div class="lightbox-tags" id="lightbox-tags"></div>
+        <h2 id="lightbox-title"></h2>
+        <p id="lightbox-desc"></p>
+        <div class="lightbox-badge-row">
+          <span class="lb-badge">✓ Designed</span>
+          <span class="lb-badge">✓ Built</span>
+          <span class="lb-badge">✓ Deployed</span>
+        </div>
+        <a id="lightbox-link" href="#" target="_blank" class="lightbox-btn">Visit Site ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS SECTION ────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-noise"></div>
+  <div class="skills-header">
+    <div class="reveal-label">EXPERTISE</div>
+    <h2 class="section-title">Skills</h2>
+  </div>
+
+  <div class="skills-field" id="skills-field">
+    <div class="skill-block" data-skill="Graphic Design" style="--sx: 15%; --sy: 20%">
+      <div class="skill-icon">✦</div>
+      <span>Graphic Design</span>
+      <div class="skill-tooltip">
+        <canvas class="skill-magic-canvas"></canvas>
+        <div class="tooltip-countdown">
+          <svg viewBox="0 0 36 36">
+            <circle class="countdown-bg" cx="18" cy="18" r="16"></circle>
+            <circle class="countdown-progress" cx="18" cy="18" r="16"></circle>
+          </svg>
+          <span class="countdown-number">3</span>
+        </div>
+        <span class="tooltip-text">Hold to explore works</span>
+      </div>
+    </div>
+    <div class="skill-block" data-skill="UI/UX Design" style="--sx: 60%; --sy: 15%">
+      <div class="skill-icon">◈</div>
+      <span>UI/UX Design</span>
+      <div class="skill-tooltip">
+        <canvas class="skill-magic-canvas"></canvas>
+        <div class="tooltip-countdown">
+          <svg viewBox="0 0 36 36">
+            <circle class="countdown-bg" cx="18" cy="18" r="16"></circle>
+            <circle class="countdown-progress" cx="18" cy="18" r="16"></circle>
+          </svg>
+          <span class="countdown-number">3</span>
+        </div>
+        <span class="tooltip-text">Hold to explore works</span>
+      </div>
+    </div>
+    <div class="skill-block" data-skill="Website Building" style="--sx: 75%; --sy: 50%">
+      <div class="skill-icon">⬡</div>
+      <span>Website Building</span>
+      <div class="skill-tooltip">
+        <canvas class="skill-magic-canvas"></canvas>
+        <div class="tooltip-countdown">
+          <svg viewBox="0 0 36 36">
+            <circle class="countdown-bg" cx="18" cy="18" r="16"></circle>
+            <circle class="countdown-progress" cx="18" cy="18" r="16"></circle>
+          </svg>
+          <span class="countdown-number">3</span>
+        </div>
+        <span class="tooltip-text">Hold to explore works</span>
+      </div>
+    </div>
+    <div class="skill-block" data-skill="Deployment" style="--sx: 40%; --sy: 60%">
+      <div class="skill-icon">⟳</div>
+      <span>Deployment</span>
+      <div class="skill-tooltip">
+        <canvas class="skill-magic-canvas"></canvas>
+        <div class="tooltip-countdown">
+          <svg viewBox="0 0 36 36">
+            <circle class="countdown-bg" cx="18" cy="18" r="16"></circle>
+            <circle class="countdown-progress" cx="18" cy="18" r="16"></circle>
+          </svg>
+          <span class="countdown-number">3</span>
+        </div>
+        <span class="tooltip-text">Hold to explore works</span>
+      </div>
+    </div>
+    <div class="skill-block" data-skill="3D Animation" style="--sx: 10%; --sy: 65%">
+      <div class="skill-icon">◎</div>
+      <span>3D Animation</span>
+      <div class="skill-tooltip">
+        <canvas class="skill-magic-canvas"></canvas>
+        <div class="tooltip-countdown">
+          <svg viewBox="0 0 36 36">
+            <circle class="countdown-bg" cx="18" cy="18" r="16"></circle>
+            <circle class="countdown-progress" cx="18" cy="18" r="16"></circle>
+          </svg>
+          <span class="countdown-number">3</span>
+        </div>
+        <span class="tooltip-text">Hold to explore works</span>
+      </div>
+    </div>
+    <div class="skill-block" data-skill="Branding" style="--sx: 50%; --sy: 35%">
+      <div class="skill-icon">◇</div>
+      <span>Branding</span>
+      <div class="skill-tooltip">
+        <canvas class="skill-magic-canvas"></canvas>
+        <div class="tooltip-countdown">
+          <svg viewBox="0 0 36 36">
+            <circle class="countdown-bg" cx="18" cy="18" r="16"></circle>
+            <circle class="countdown-progress" cx="18" cy="18" r="16"></circle>
+          </svg>
+          <span class="countdown-number">3</span>
+        </div>
+        <span class="tooltip-text">Hold to explore works</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT SECTION ───────────────────────────────────── -->
+<section id="contact">
+  <div class="section-noise"></div>
+  <div class="contact-ambient"></div>
+
+  <div class="contact-inner">
+    <div class="reveal-label">GET IN TOUCH</div>
+    <h2 class="contact-headline">
+      <span>Let's build something</span>
+      <span class="contact-word-glow">unforgettable.</span>
+    </h2>
+    <p class="contact-sub">Open for creative collaborations, web projects, and brand experiences.</p>
+
+    <div class="contact-buttons">
+      <a href="https://instagram.com" target="_blank" class="contact-btn" id="btn-ig">
+        <span class="btn-icon">📷</span>
+        <span>Instagram</span>
+      </a>
+      <a href="https://github.com/Pavanam4" target="_blank" class="contact-btn" id="btn-gh">
+        <span class="btn-icon">⌥</span>
+        <span>GitHub</span>
+      </a>
+      <a href="https://behance.net" target="_blank" class="contact-btn" id="btn-be">
+        <span class="btn-icon">◈</span>
+        <span>Behance</span>
+      </a>
+      <a href="mailto:pavan@example.com" class="contact-btn" id="btn-em">
+        <span class="btn-icon">✉</span>
+        <span>Email</span>
+      </a>
+    </div>
+
+    <div class="contact-footer">
+      <div class="footer-line"></div>
+      <span class="footer-copy">© 2025 Pavan Am — All rights reserved</span>
+      <div class="footer-line"></div>
+    </div>
+  </div>
+</section>
+
+  <!-- Skill Gallery Overlay -->
+  <div id="skill-gallery-overlay" class="gallery-overlay">
+    <button id="gallery-close" class="gallery-close">✕</button>
+    <div class="gallery-inner">
+      <div class="gallery-header">
+        <h2 id="gallery-title"></h2>
+        <div class="magic-line"></div>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </div>
+
+<!-- ─── Scripts ────────────────────────────────────────────── -->
+<script src="js/app.js"></script>
+</body>
+</html>
